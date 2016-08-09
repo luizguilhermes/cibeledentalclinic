@@ -1,0 +1,22 @@
+<section>
+  <h1>Lista de Consultas</h1>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Número do convênio</th>
+        <th>Data</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.health_insurance %></td>
+        <td><%= appointment.date %></td>
+        <td><%= appointment.price %></td>
+      </tr>
+      <% end %>     
+    </tbody>
+  </table>
+</section>
+<div><%= link_to 'Voltar', root_path , class: "btn btn-primary" %></div>

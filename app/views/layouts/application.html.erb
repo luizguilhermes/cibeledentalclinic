@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cibeledentalclinic</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= link_to "Cibele Dental Clinic", root_path, class: "navbar-brand" %>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to 'Cadastrar cliente', new_customer_path %>
+              </li>
+              <li>
+                <%= link_to 'Visualizar pacientes', customers_path %>
+              </li>
+              <li>
+                <%= link_to 'Agendar consulta', new_appointment_path %>
+              </li>
+              <li>
+                <%= link_to 'Visualizar consultas', appointments_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p><%= notice %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+

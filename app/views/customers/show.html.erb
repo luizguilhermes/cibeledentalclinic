@@ -1,0 +1,32 @@
+<section>
+  <dl class="dl-horizontal">
+    <dt>
+      Nome do cliente
+    </dt>
+    <dd>
+      <%= @customer.customer_name %>
+    </dd>
+
+    <dt>
+      CPF
+    </dt>
+    <dd>
+      <%= @customer.customer_cpf %>
+    </dd>
+
+    <dt>
+      RG
+    </dt>
+    <dd>
+      <%= @customer.customer_rg %>
+    </dd>
+
+    <dt>
+      Sexo
+    </dt>
+    <dd>
+      <%= @customer.customer_gender %>
+    </dd>
+  </dl>
+  <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
+</section>

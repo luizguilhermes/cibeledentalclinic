@@ -1,0 +1,18 @@
+<section>
+	<h1>Novo agendamento</h1>
+	<div clas="form-group">
+	<%= simple_form_for @appointment do |f| %>
+		<%= f.input :featured, as: :radio_buttons, label: 'Possui convênio?' %>
+		<%= f.input :health_insurance, label:'Número do convênio', placeholder: 'Número do convênio' %>
+		<div class="form-group">
+				<%= f.label :customer_id, 'Cliente' %>:
+				<%= f.collection_select(:customer_id, @customers, :id, :customer_name, {}) %> 
+		</div>
+		<%= f.input :date, label: 'Data agendada', html5: true %>
+		<%= f.input :service, label: 'Serviço', placeholder: 'Serviço a ser realizado' %>
+		<%= f.input :price, label: 'Valor' %>
+	<% end %>
+	</div>
+	<br>
+	<%= link_to 'Voltar', root_path, class:'btn btn-primary' %>
+</section>
